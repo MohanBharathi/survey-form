@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "name": "selva",
+      "age": 24,
+      "address": "nothing",
+      "phoneNo": 8610268591,
+      "email": "selvamani825@gmail.com"
+    },
+    {
+      "name": "kavi",
+      "age": "21",
+      "address": "nothing",
+      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664657362/pdf/ID%20card%20corrections.pdf.pdf",
+      "phoneNo": "23131321",
+      "email": "email.e@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "kavin",
+      "age": "12",
+      "address": "nothing",
+      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664659440/photo/azureLogo.png.png",
+      "phoneNo": "324232",
+      "email": "test@fgmail.com",
+      "id": 2
+    },
+    {
+      "name": "siva",
+      "age": "21",
+      "address": "nothing",
+      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664659440/photo/azureLogo.png.png",
+      "phoneNo": "23892893",
+      "email": "siva@gmail.com",
+      "id": 3
+    }
+  ]
+}
