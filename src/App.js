@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 import './App.css';
-
+import azureLogo from './azureLogo.png';
 function App() {
   
 
@@ -28,6 +28,7 @@ function App() {
     img:imgUrl,
     phone:'',
     email:'',
+    resume:''
   });
   const changeHandler = (e) => {
     setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -38,8 +39,7 @@ function App() {
     console.log(data);
     axios
       .post(
-        "https://sheet.best/api/sheets/e9a48439-26c6-4aed-b144-2b83464e8672",
-        {data,imgUrl}
+        "https://sheet.best/api/sheets/e9a48439-26c6-4aed-b144-2b83464e8672",data
       )
       .then((res) => console.log(res));
   };
@@ -56,6 +56,7 @@ function App() {
       axios.post("https://api.cloudinary.com/v1_1/dcmztntur/image/upload/",formData)
       .then(res=>{
         setImgUrl(res.data.url)
+        setData((prev)=>({...prev,img:res.data.url}))
     }).then(()=>{setIsPending(false)}).catch(err=>{
       setErrMsg(err.message);
       setError(true);
@@ -93,6 +94,7 @@ function App() {
           .then(res => res.json()).then((a) => {
             console.log(a)
             setPdfUrl(a) //See response
+            setData((prev)=>({...prev,resume:a.url})) //for google sheets
             setIsPending(false)
           }).catch(e => {
             setErrMsg(e)
@@ -117,52 +119,62 @@ function App() {
     
 //   }
 // }
-  // const submitHandler = (e) => {
-  //     e.preventDefault();
-  //     console.log({name,age,address,imgUrl,phoneNo,email});
-  //     axios.post("http://localhost:3000/data",{name,age,address,imgUrl,phoneNo,email,pdfUrl})
-  // }
+  const submitHandler = (e) => {
+      e.preventDefault();
+      console.log({name,age,address,imgUrl,phoneNo,email});
+      axios.post("http://localhost:3000/data",{name,age,address,imgUrl,phoneNo,email,pdfUrl})
+  }
   return (
+    
     <div className="App">
-      <h1>Fill this form to join AZURE family</h1>
-      <form onSubmit={(e) => submitHandlerSheet(e)}>
+      <div className='img-container'>
+      <img src={azureLogo} alt="azureLogo.png"></img>
+      </div>
+      <h1>Fill this form to get internship</h1>
+      <form onSubmit={(e) => submitHandler(e)}>
         <input
           type="text"
           name="name"
           placeholder="enter your name"
           onChange={(e) => changeHandler(e)}
+          required
         ></input>
         <input
           type="number"
           name="age"
           placeholder="enter your age"
           onChange={(e) => changeHandler(e)}
+          required
         ></input>
         <input
           type="text"
           name="address"
           placeholder="enter your address"
           onChange={(e) => changeHandler(e)}
+          required
         ></input>
         <input
           type="text"
           name="phone"
           placeholder="enter your phone"
           onChange={(e) => changeHandler(e)}
+          required
         ></input>
         <input
           type="text"
           name="email"
           placeholder="enter your email"
           onChange={(e) => changeHandler(e)}
+          required
         ></input>
-        <input type={'file'} onChange={(e)=>ImageUpload(e.target.files[0])}></input>
-        <input type={'file'} onChange={(e)=>PdfUpload(e)}></input>
-        <input disabled={isPending?true:false} type={"submit"}></input>
+        <input type={'file'} onChange={(e)=>ImageUpload(e.target.files[0])} required></input>
+        <input type={'file'} onChange={(e)=>PdfUpload(e)}required></input>
+        <input type={"submit"}></input>
       </form>
       {isPending&&<div>loading...</div>}
       {error&&<div>{errMsg}</div>}
     </div>
+    
   );
 }
 
