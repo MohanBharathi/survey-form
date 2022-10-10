@@ -1,39 +1,30 @@
 {
   "data": [
     {
-      "id": 0,
-      "name": "selva",
-      "age": 24,
-      "address": "nothing",
-      "phoneNo": 8610268591,
-      "email": "selvamani825@gmail.com"
-    },
-    {
-      "name": "kavi",
-      "age": "21",
-      "address": "nothing",
-      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664657362/pdf/ID%20card%20corrections.pdf.pdf",
-      "phoneNo": "23131321",
-      "email": "email.e@gmail.com",
-      "id": 1
-    },
-    {
-      "name": "kavin",
-      "age": "12",
-      "address": "nothing",
-      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664659440/photo/azureLogo.png.png",
-      "phoneNo": "324232",
-      "email": "test@fgmail.com",
-      "id": 2
+      "name": "selvaguru",
+      "age": "24",
+      "address": "anything",
+      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664806108/photo/azureLogo.png.png",
+      "phoneNo": "29384923",
+      "email": "selva@gmail.com",
+      "pdfUrl": {
+        "url": "https://docs.google.com/document/d/1ilAIUL--sVdYJzs2XQYBEi2cAhgVswwv/edit?usp=drivesdk&ouid=111611072821571807998&rtpof=true&sd=true",
+        "id": "1ilAIUL--sVdYJzs2XQYBEi2cAhgVswwv"
+      },
+      "id": 3
     },
     {
       "name": "siva",
       "age": "21",
-      "address": "nothing",
-      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664659440/photo/azureLogo.png.png",
-      "phoneNo": "23892893",
+      "address": "sellur",
+      "imgUrl": "http://res.cloudinary.com/dcmztntur/image/upload/v1664806108/photo/azureLogo.png.png",
+      "phoneNo": "3483928492",
       "email": "siva@gmail.com",
-      "id": 3
+      "pdfUrl": {
+        "url": "https://drive.google.com/file/d/1Fr42HJ9TWTPsjKhfEc1VoXIPeFk5FuTX/view?usp=drivesdk",
+        "id": "1Fr42HJ9TWTPsjKhfEc1VoXIPeFk5FuTX"
+      },
+      "id": 4
     }
   ]
 }
